@@ -30,21 +30,25 @@ public class Craps {
             System.out.println("You rolled: " + dice[0] + " and " + dice[1] + " (sum: " + sum + ")");
             System.out.println();
 
-            if (sum == 7 || sum == 11) {
-                System.out.println("You win!");
-                wins++;
-            } else if (sum == 2 || sum == 3 || sum == 12) {
-                System.out.println("You lose!");
-                losses++;
-            } else {
-                System.out.println("Your point is: " + sum);
-                boolean pointResult = rollforPoint(sum);
-                if (pointResult) {
-                    System.out.println("You rolled your point! You win!");
+            switch (sum) {
+                case 7, 11 -> {
+                    System.out.println("You win!");
                     wins++;
-                } else {
-                    System.out.println("You rolled a 7 ! You lose!");
+                }
+                case 2, 3, 12 -> {
+                    System.out.println("You lose!");
                     losses++;
+                }
+                default -> {
+                    System.out.println("Your point is: " + sum);
+                    boolean pointResult = rollforPoint(sum);
+                    if (pointResult) {
+                        System.out.println("You rolled your point! You win!");
+                        wins++;
+                    } else {
+                        System.out.println("You rolled a 7! You lose!");
+                        losses++;
+                    }
                 }
             }
 
