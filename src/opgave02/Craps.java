@@ -14,7 +14,7 @@ public class Craps {
 
         int wins = 0;
         int losses = 0;
-        String playAgain;
+        String playAgain = "yes";
 
         do {
             System.out.print("Roll two dice? ('yes/no') ");
@@ -46,7 +46,7 @@ public class Craps {
                         System.out.println("You rolled your point! You win!");
                         wins++;
                     } else {
-                        System.out.println("You rolled a 7! You lose!");
+                        System.out.println("You rolled a 7 ! You lose!");
                         losses++;
                     }
                 }
